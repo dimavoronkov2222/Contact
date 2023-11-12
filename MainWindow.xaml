@@ -3,10 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Contact"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ListView ItemsSource="{Binding People}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" />
+                    <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding PhoneNumber}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="609,326,0,0" VerticalAlignment="Top" Height="60" Width="121" Click="Button_Click"/>
     </Grid>
 </Window>
